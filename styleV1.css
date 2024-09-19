@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box; /*Dieser Eintrag sollte grundsätzlich mit aufgenommen werden, 
+    um die Größen der Elemente auch mit %-Angaben sauber berechnen zu können 
+    (Best-Practice lt. Janis Seemann */
+}
+:root {
+  --textfarbe: rgb(255, 95, 31);
+  --hintergrundfarbe: rgb(0, 0, 0);
+  --hintergrundfarbe2: rgb(0, 0, 0);
+  --rahmenfarbe: rgb(255, 95, 31);
+}
+
+/*
+  Mit den folgenden Einstellungen bei html und body lässt sich ein 
+  Bild sauber in der Mitte fixieren und darstellen. 
+  
+  */
+
+html {
+  min-height: 100%; /*Setzt die Höhe des HTML Elements auf 100% Höhe des Browserfenster
+    Dies verhindert, dass das Bild im Hintergrund unschön abgeschnitten wird*/
+}
+
+body {
+  min-height: 100%; /*Setzt die Höhe des body Elements auf 100% Höhe des Browserfenster
+    Dies verhindert, dass das Bild im Hintergrund unschön abgeschnitten wird*/
+  background: linear-gradient(90deg, rgba(0, 212, 255, 1) 0%, rgba(90, 90, 129, 1) 95%, rgba(2, 0, 36, 1) 100%);
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.flex1 {
+  /* border: 1px solid black; */
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  /* min-height: 500px; */
+}
+
+.generalButton {
+  font-size: 1em;
+  height: 80px;
+  width: 300px;
+  background-color: orange;
+  border: solid 2px black;
+  border-radius: 5px;
+  transition: 300ms;
+  margin-bottom: 10px;
+}
+
+.generalButton:hover {
+  transition: 300ms;
+  font-size: 1.1em;
+  /* box-shadow: 0px 0px 25px 10px #ff0215; */
+}
+
+.border {
+  border: 2px solid black;
+}
+
+.inputSection {
+  width: 100%;
+  max-width: 400px;
+}
+
+.inputSection p {
+  font-size: 1.5em;
+  padding-left: 2px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 5px;
+  /* width: 120px; */
+  width: 33%;
+  min-width: 115px;
+}
+.inputSection input {
+  font-size: 1.3em;
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 65%;
+  height: 32px;
+  margin-left: 1%;
+  margin-bottom: 5px;
+  padding-left: 1%;
+}
+#inputID {
+  background-color: rgba(160, 160, 160, 1);
+}
+.displayNone {
+  display: none;
+}
+
+.container-inventoryList {
+  /* max-width: 600px; */
+  width: 100%;
+  /* min-height: 500px; */
+  overflow-y: scroll;
+  margin-bottom: 20px;
+}
+
+.inventoryList {
+  margin-top: 20px;
+
+  margin-right: auto;
+  margin-left: auto;
+  /* width: 100%; */
+  min-width: 830px;
+
+  text-align: center;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.inventoryListHead {
+  border: 3px solid black;
+}
+
+tbody > tr {
+  border: 1px solid black;
+}
+
+.inventoryListBody {
+  border: 3px solid black;
+}
+
+.inventoryListHead th {
+  border-right: 3px solid black;
+}
+.th-colw60 {
+  width: 40px;
+}
+.th-colw110 {
+  width: 110px;
+}
+
+.inventoryListBody > tr {
+  transition: 500ms;
+}
+.inventoryListBody > tr:hover {
+  background-color: rgba(200, 200, 200, 0.5);
+  transition: 500ms;
+}
+.inventoryListBodyclick {
+  background-color: rgba(200, 200, 200, 0.5);
+}
+
+#delButton {
+  font-size: 24px;
+}
+
+#delButton:hover {
+  color: rgb(255, 0, 0);
+  user-select: none;
+}
+#changeButton {
+  font-size: 24px;
+}
+
+#changeButton:hover {
+  color: rgb(255, 0, 0);
+  user-select: none;
+}
