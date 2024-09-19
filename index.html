@@ -22,31 +22,27 @@
       <h1>Materialmanager</h1>
       <button class="generalButton" id="newItemShow">Neues Inventar anlegen</button>
       <div class="inputSection displayNone" id="inputSection">
-        <div>
-          <p>Nummer</p>
-          <input id="inputID" type="text" placeholder="ID" readonly />
-        </div>
-        <div>
-          <p>Name</p>
-          <input id="inputName" type="text" placeholder="Name" />
-        </div>
-        <div>
-          <p>Lagerort</p>
-          <input id="inputStoreLocation" type="text" placeholder="Lagerort" />
-        </div>
-        <div>
-          <p>Lagerplatz</p>
-          <input id="inputStorePlace" type="text" placeholder="Lagerplatz" />
-        </div>
+        <p>Nummer</p>
+        <input id="inputID" type="text" placeholder="ID" readonly />
+
+        <p>Name/Bezeichnung</p>
+        <input id="inputName" type="text" placeholder="Bezeichnung" />
+
+        <p>Lagerort</p>
+        <input id="inputStoreLocation" type="text" placeholder="Lagerort" />
+
+        <p>Lagerplatz</p>
+        <input id="inputStorePlace" type="text" placeholder="Lagerplatz" />
+
         <!-- <button id="save">Speichern</button> -->
-        <button class="saveButton" id="saveArray">Speichern Array</button>
+        <button class="saveButton" id="saveArray">Neues Inventar hinzufügen</button>
       </div>
       <div class="container-inventoryList">
         <table class="inventoryList">
           <thead class="inventoryListHead">
             <tr>
               <th class="th-colw60">ID</th>
-              <th class="th-colw110">Name</th>
+              <th class="th-colw110">Name/Bezeichnung</th>
               <th class="th-colw110">Lagerort</th>
               <th class="th-colw110">Lagerplatz</th>
               <!-- <th class="th-colw110">erfasst am</th> -->

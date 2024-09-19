@@ -197,6 +197,7 @@ function deleteAllF() {
     allItemsArray = [];
     updateItemList();
     saveAllItemsArray();
+    newIDvalue();
   }
 }
 
