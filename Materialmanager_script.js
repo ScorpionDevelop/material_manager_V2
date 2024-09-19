@@ -1,13 +1,13 @@
-let inputSection = document.getElementById("inputSection");
-let newItemShow = document.getElementById("newItemShow");
-let inventoryListID = document.getElementById("inventoryListID");
-let save = document.getElementById("save");
-let save2 = document.getElementById("saveArray");
-let inputID = document.getElementById("inputID");
-let inputName = document.getElementById("inputName");
-let inputStoreLocation = document.getElementById("inputStoreLocation");
-let inputStorePlace = document.getElementById("inputStorePlace");
-let deleteAll = document.getElementById("deleteAll");
+const inputSection = document.getElementById("inputSection");
+const newItemShow = document.getElementById("newItemShow");
+const inventoryListID = document.getElementById("inventoryListID");
+const save = document.getElementById("save");
+const save2 = document.getElementById("saveArray");
+const inputID = document.getElementById("inputID");
+const inputName = document.getElementById("inputName");
+const inputStoreLocation = document.getElementById("inputStoreLocation");
+const inputStorePlace = document.getElementById("inputStorePlace");
+const deleteAll = document.getElementById("deleteAll");
 /////
 //TODOS
 // Trimmethode an die Eingabefelder hinzufügen
@@ -15,7 +15,6 @@ let deleteAll = document.getElementById("deleteAll");
 //
 ////
 
-// let allItemsArray = [];
 let allItemsArray = getItemList();
 updateItemList();
 
@@ -26,11 +25,7 @@ let monat = inputDate.getMonth() + 1;
 let jahr = inputDate.getFullYear();
 
 let todayDateInput = tag + "." + monat + "." + jahr;
-//alert(heuteAktuell);
 
-//
-//    Array
-//
 function addNewItemArray() {
   // create new Object
   let newItemObject = {
@@ -187,12 +182,6 @@ function getItemList() {
 }
 //####################################################################
 
-//####################################################################
-//
-//    Array - Ende
-//
-//####################################################################
-
 function inputSectionOnOff() {
   inputSection.classList.toggle("displayNone");
   newIDvalue();
@@ -205,10 +194,9 @@ function newIDvalue() {
 function deleteAllF() {
   let allDelQ = confirm("Soll wirklich alles gelöscht werden");
   if (allDelQ == true) {
-    let allRowsDel = document.querySelectorAll("tbody>tr");
-    allRowsDel.forEach((row) => {
-      row.remove();
-    });
+    allItemsArray = [];
+    updateItemList();
+    saveAllItemsArray();
   }
 }
 

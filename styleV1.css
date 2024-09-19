@@ -6,7 +6,7 @@
 :root {
   --textfarbe: rgb(255, 95, 31);
   --hintergrundfarbe: rgb(0, 0, 0);
-  --hintergrundfarbe2: rgb(0, 0, 0);
+  --hintergrundfarbe2: rgba(50, 50, 50, 0.5);
   --rahmenfarbe: rgb(255, 95, 31);
 }
 
@@ -95,6 +95,22 @@ body {
 #inputID {
   background-color: rgba(160, 160, 160, 1);
 }
+
+.saveButton {
+  margin-left: 50%;
+  translate: -50%;
+  background-color: var(--hintergrundfarbe);
+  color: var(--textfarbe);
+  border: none;
+  border-radius: 5px;
+  padding: 2px;
+  transition: 300ms;
+}
+
+.saveButton:hover {
+  background-color: var(--hintergrundfarbe2);
+  transition: 300ms;
+}
 .displayNone {
   display: none;
 }
@@ -168,4 +184,12 @@ tbody > tr {
 #changeButton:hover {
   color: rgb(255, 0, 0);
   user-select: none;
+}
+
+.delAllButton {
+  background-color: var(--hintergrundfarbe);
+  border: none;
+  color: var(--textfarbe);
+  margin-left: 50%;
+  translate: -50%;
 }
