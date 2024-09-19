@@ -52,10 +52,7 @@ function addNewItemArray() {
 }
 
 function updateItemList() {
-  let allRowsDel = document.querySelectorAll("tbody>tr");
-  allRowsDel.forEach((row) => {
-    row.remove();
-  });
+  deleteItemList();
 
   allItemsArray.forEach((item, itemIndex) => {
     todoItem = createItemList(item, itemIndex);
@@ -204,103 +201,6 @@ function inputSectionOnOff() {
 function newIDvalue() {
   inputID.value = allItemsArray.length + 1;
 }
-/*
-function createNewTableElement() {
-  //Erstellen und hinzufügen des TR-Elements
-  let TableItemTr = document.createElement("tr");
-  inventoryListID.appendChild(TableItemTr);
-  TableItemTr.classList.add("inventoryListBodyRow");
-
-  //Erstellen und hinzufügen des TD-Elementes zum zuvor erstellten TR Elements
-
-  // ID Nummer
-  let TableItemTdID = document.createElement("td");
-  TableItemTdID.appendChild(document.createTextNode(inputID.value));
-  TableItemTr.appendChild(TableItemTdID);
-
-  // Name des Inventars
-  let TableItemTdName = document.createElement("td");
-  TableItemTdName.appendChild(document.createTextNode(inputName.value));
-  TableItemTr.appendChild(TableItemTdName);
-
-  // Lagerort
-  let TableItemTdStoreLocation = document.createElement("td");
-  TableItemTdStoreLocation.appendChild(document.createTextNode(inputStoreLocation.value));
-  TableItemTr.appendChild(TableItemTdStoreLocation);
-
-  //Lagerplatz
-  let TableItemTdStorePlace = document.createElement("td");
-  TableItemTdStorePlace.appendChild(document.createTextNode(inputStorePlace.value));
-  TableItemTr.appendChild(TableItemTdStorePlace);
-
-  // Datum an dem das Inventar erfasst wurde
-  let TableItemTdStoreDate = document.createElement("td");
-  TableItemTdStoreDate.appendChild(document.createTextNode(todayDateInput));
-  TableItemTr.appendChild(TableItemTdStoreDate);
-
-  // wenn verliehen, an wen
-  let TableItemTdLentTo = document.createElement("td");
-  TableItemTdLentTo.appendChild(document.createTextNode("an wen"));
-  TableItemTr.appendChild(TableItemTdLentTo);
-
-  // wenn verliehen, wann
-  let TableItemTdLentDate = document.createElement("td");
-  TableItemTdLentDate.appendChild(document.createTextNode("wann"));
-  TableItemTr.appendChild(TableItemTdLentDate);
-
-  //löschen
-  let TableItemTdStoreDelete = document.createElement("td");
-  //TableItemTdStoreDelete.appendChild(document.createTextNode("löschen"));
-  TableItemTr.appendChild(TableItemTdStoreDelete);
-  TableItemTdStoreDelete.addEventListener("click", deleteRow);
-  let delButton = document.createElement("span");
-  delButton.classList.add("material-symbols-outlined");
-  delButton.appendChild(document.createTextNode("delete"));
-  delButton.id = "delButton";
-  TableItemTdStoreDelete.appendChild(delButton);
-
-  //bearbeiten
-  let TableItemTdStorechange = document.createElement("td");
-  //TableItemTdStoreDelete.appendChild(document.createTextNode("löschen"));
-  TableItemTr.appendChild(TableItemTdStorechange);
-  //TableItemTdStorechange.addEventListener("click", deleteRow);
-  let editButton = document.createElement("span");
-  editButton.classList.add("material-symbols-outlined");
-  editButton.appendChild(document.createTextNode("edit"));
-  editButton.id = "changeButton";
-  TableItemTdStoreDelete.appendChild(editButton);
-
-  function setSelection() {
-    // Abfrage ob das ausgewählte Element die Klasse bereits besitz
-    if (TableItemTr.classList.contains("inventoryListBodyclick")) {
-      // wenn ja, die Klasse entfernen über toggle
-      TableItemTr.classList.toggle("inventoryListBodyclick");
-    } else {
-      // wenn nein, dann
-      // Alle anderen TR-Elemente holen
-      let allRows = document.querySelectorAll(".inventoryListBodyRow");
-
-      // Durch alle TR-Elemente iterieren und die Klasse entfernen
-      allRows.forEach((row) => {
-        row.classList.remove("inventoryListBodyclick");
-        // und dem aktuellen Element die Klasse zuweisen
-      });
-      TableItemTr.classList.toggle("inventoryListBodyclick");
-    }
-  }
-
-  TableItemTr.addEventListener("click", setSelection);
-
-  function deleteRow() {
-    TableItemTr.remove();
-  }
-
-  inputID.value = "";
-  // inputName.value = "";
-  // inputStoreLocation.value = "";
-  // inputStorePlace.value = "";
-}
-*/
 // Funktion die die komplette Liste löscht
 function deleteAllF() {
   let allDelQ = confirm("Soll wirklich alles gelöscht werden");
@@ -312,86 +212,13 @@ function deleteAllF() {
   }
 }
 
+function deleteItemList() {
+  let allRowsDel = document.querySelectorAll("tbody>tr");
+  allRowsDel.forEach((row) => {
+    row.remove();
+  });
+}
 //save.addEventListener("click", createNewTableElement);
 save2.addEventListener("click", addNewItemArray);
 newItemShow.addEventListener("click", inputSectionOnOff);
 deleteAll.addEventListener("click", deleteAllF);
-
-//####################################################################
-//
-//                        Test-Übung
-//Logik aus ToDo App mit Array und Update TodoListe und speichern in LocalStorage
-//####################################################################
-//
-
-//
-//####################################################################
-//                          Ende
-//                        Test-Übung
-//              Logik aus ToDo App mit Array und Update TodoListe
-//####################################################################
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-// lineSelection.addEventListener("click", inventoryListBodySelectOnOff);
-
-//####################################################################
-//
-//                        Test-Übung
-//
-//####################################################################
-/*
-// let writeButton = document.getElementById("writeButton");
-let newToDo = document.getElementById("newToDo");
-
-//writeButton.addEventListener("click", createListElementTest);
-
-function createListElementTest() {
-  let listItem = document.createElement("li");
-  listItem.appendChild(document.createTextNode(newToDo.value));
-  toDoList.appendChild(listItem);
-  newToDo.value = "";
-
-  let delButton = document.createElement("span");
-  delButton.classList.add("material-symbols-outlined");
-  delButton.appendChild(document.createTextNode("delete"));
-  delButton.id = "delButton";
-  li.appendChild(delButton);
-
-  function setDone() {
-    li.classList.toggle("done");
-    if (delSign == true) {
-      li.classList.remove("done");
-      delSign = false;
-    }
-  }
-  function setDelete() {
-    li.classList.add("delete");
-    li.classList.remove("done");
-    delSign = true;
-  }
-
-  li.addEventListener("click", setDone);
-  delButton.addEventListener("click", setDelete);
-}
-*/
